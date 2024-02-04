@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Tyra's Jokes</title>
+    <link rel="stylesheet" href="css/tailwind.css">
+</head>
+<body>
+    <header>
+        <nav id="navbar" class="fixed top-0 w-full bg-white shadow-md">
+            <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+                <a id="logo" href="index.html" class="text-2xl font-bold text-purple-600">Tyra's Jokes</a>
+                <ul class="flex space-x-4">
+                    <li><a id="home-link" href="index.html" class="text-gray-700 hover:text-purple-600">Home</a></li>
+                    <li><a id="about-link" href="about.html" class="text-gray-700 hover:text-purple-600">About</a></li>
+                    <li><a id="contact-link" href="contact.html" class="text-gray-700 hover:text-purple-600">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <h1 id="contact-title" class="text-4xl font-bold mb-6">Contact Us</h1>
+        <form id="contact-form" class="space-y-4">
+            <div>
+                <label for="name-input" class="block text-gray-700">Name</label>
+                <input id="name-input" type="text" class="w-full border border-gray-300 rounded p-2">
+            </div>
+            <div>
+                <label for="email-input" class="block text-gray-700">Email</label>
+                <input id="email-input" type="email" class="w-full border border-gray-300 rounded p-2">
+            </div>
+            <div>
+                <label for="message-input" class="block text-gray-700">Message</label>
+                <textarea id="message-input" rows="5" class="w-full border border-gray-300 rounded p-2"></textarea>
+            </div>
+            <button type="submit" class="bg-purple-600 text-white rounded px-4 py-2 hover:bg-purple-700">Send Message</button>
+        </form>
+    </main>
+
+    <footer id="footer" class="bg-gray-100 py-4">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <div class="flex space-x-4">
+                    <a id="facebook-link" href="#" class="text-gray-600 hover:text-purple-600">Facebook</a>
+                    <a id="twitter-link" href="#" class="text-gray-600 hover:text-purple-600">Twitter</a>
+                    <a id="instagram-link" href="#" class="text-gray-600 hover:text-purple-600">Instagram</a>
+                </div>
+                <p class="text-gray-600">&copy; 2023 Tyra's Jokes</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

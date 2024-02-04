@@ -1,0 +1,35 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+<script>
+  let angle = 0;
+  let len = 100;
+
+  function setup() {
+    createCanvas(windowWidth, windowHeight);
+    background(0);
+  }
+
+  function draw() {
+    background(0);
+    translate(width / 2, height);
+    stroke(255);
+    branch(len);
+  }
+
+  function branch(len) {
+    line(0, 0, 0, -len);
+    translate(0, -len);
+    if (len > 4) {
+      push();
+      rotate(angle);
+      branch(len * 0.67);
+      pop();
+      push();
+      rotate(-angle);
+      branch(len * 0.67);
+      pop();
+    }
+
+    // Update the angle of rotation
+    angle += 0.02;
+  }
+</script>

@@ -1,0 +1,135 @@
+// Game variables
+let x, y;
+let speedX, speedY;
+let paddleX, paddleY, paddleWidth, paddleHeight;
+let ballSize;
+let bricks;
+let score;
+
+function setup() {
+  const gameContainer = document.getElementById('game-container');
+  const canvas = createCanvas(gameContainer.offsetWidth, gameContainer.offsetHeight);
+  canvas.parent(gameContainer);
+
+  // Initialize game variables
+  x = width / 2;
+  y = height / 2;
+  speedX = 5;
+  speedY = -5;
+  paddleWidth = 100;
+  paddleHeight = 10;
+  paddleX = width / 2 - paddleWidth / 2;
+  paddleY = height - 50;
+  ballSize = 20;
+  bricks = [];
+  score = 0;
+
+  // Create bricks
+  const brickRows = 5;
+  const brickCols = 8;
+  const brickWidth = width / brickCols;
+  const brickHeight = 30;
+  for (let r = 0; r < brickRows; r++) {
+    for (let c = 0; c < brickCols; c++) {
+      const brick = {
+        x: c * brickWidth,
+        y: r * brickHeight + 30,
+        width: brickWidth,
+        height: brickHeight,
+        visible: true,
+      };
+      bricks.push(brick);
+    }
+  }
+}
+
+function draw() {
+  // Clear the canvas
+  background(0);
+
+  // Draw bricks
+  for (let brick of bricks) {
+    if (brick.visible) {
+      fill(255);
+      rect(brick.x, brick.y, brick.width, brick.height);
+    }
+  }
+
+  // Draw paddle
+  fill(255);
+  rect(paddleX, paddleY, paddleWidth, paddleHeight);
+
+  // Draw ball
+  fill(255);
+  ellipse(x, y, ballSize);
+
+  // Move paddle
+  if (keyIsDown(LEFT_ARROW)) {
+    paddleX -= 10;
+  } else if (keyIsDown(RIGHT_ARROW)) {
+    paddleX += 10;
+  }
+
+  // Keep paddle within screen boundaries
+  paddleX = constrain(paddleX, 0, width - paddleWidth);
+
+  // Move ball
+  x += speedX;
+  y += speedY;
+
+  // Ball collision with walls
+  if (x < 0 || x > width) {
+    speedX *= -1;
+  }
+  if (y < 0) {
+    speedY *= -1;
+  }
+
+  // Ball collision with paddle
+  if (
+    y + ballSize / 2 >= paddleY &&
+    y + ballSize / 2 <= paddleY + paddleHeight &&
+    x + ballSize / 2 >= paddleX &&
+    x + ballSize / 2 <= paddleX + paddleWidth
+  ) {
+    speedY *= -1;
+  }
+
+  // Ball collision with bricks
+  for (let brick of bricks) {
+    if (brick.visible && collideRectCircle(brick.x, brick.y, brick.width, brick.height, x, y, ballSize)) {
+      speedY *= -1;
+      brick.visible = false;
+      score += 10;
+    }
+  }
+
+  // Game over condition
+  if (y > height) {
+    gameOver();
+  }
+
+  // Display score
+  textSize(24);
+  fill(255);
+  text(`Score: ${score}`, 10, 30);
+}
+
+function gameOver() {
+  noLoop();
+  background(0);
+  textSize(36);
+  fill(255);
+  textAlign(CENTER, CENTER);
+  text("Game Over", width / 2, height / 2);
+}
+
+function keyPressed() {
+  if (keyCode === ENTER) {
+    setup();
+    loop();
+  }
+}
+
+// Run the game
+new p5();

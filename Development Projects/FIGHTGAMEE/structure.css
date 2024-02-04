@@ -1,0 +1,55 @@
+my_fighting_game/
+│
+├── assets/
+│   ├── images/
+│   │   ├── backgrounds/
+│   │   │   ├── level_1.png
+│   │   │   ├── level_2.png
+│   │   │   ├── level_3.png
+│   │   │   ├── ...
+│   │   │   └── level_8.png
+│   │   │
+│   │   ├── characters/
+│   │   │   ├── character_1/
+│   │   │   │   ├── idle.png
+│   │   │   │   ├── walk.png
+│   │   │   │   ├── jump.png
+│   │   │   │   ├── attack.png
+│   │   │   │   └── ...
+│   │   │   │
+│   │   │   ├── character_2/
+│   │   │   │   ├── idle.png
+│   │   │   │   ├── walk.png
+│   │   │   │   ├── jump.png
+│   │   │   │   ├── attack.png
+│   │   │   │   └── ...
+│   │   │   │
+│   │   │   └── ...
+│   │   │
+│   │   └── ui_elements/
+│   │       ├── health_bar.png
+│   │       ├── timer.png
+│   │       └── ...
+│   │
+│   └── sounds/
+│       ├── background_music/
+│       │   ├── level_1.wav
+│       │   ├── level_2.wav
+│       │   ├── level_3.wav
+│       │   ├── ...
+│       │   └── level_8.wav
+│       │
+│       ├── hit_sound.wav
+│       ├── jump_sound.wav
+│       ├── attack_sound.wav
+│       └── ...
+│
+├── src/
+│   ├── main.py
+│   ├── character.py
+│   ├── game.py
+│   ├── level.py
+│   ├── ui.py
+│   └── ...
+│
+└── README.md

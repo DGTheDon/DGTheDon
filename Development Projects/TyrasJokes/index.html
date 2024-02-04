@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your p5.js Sketch</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let waves = [];
+
+        function setup() {
+            createCanvas(windowWidth, windowHeight);
+            background(255);
+        }
+
+        function draw() {
+            background(255, 10); // Redraw background with slight transparency to create fading effect
+            for (let i = waves.length - 1; i >= 0; i--) {
+                waves[i].display();
+                waves[i].update();
+                if (waves[i].isDone()) {
+                    waves.splice(i, 1);
+                }
+            }
+        }
+
+        function mousePressed() {
+            waves.push(new Wave(mouseX, mouseY));
+        }
+
+        class Wave {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.radius = 0;
+                this.opacity = 255;
+            }
+
+            display() {
+                noFill();
+                stroke(0, this.opacity);
+                ellipse(this.x, this.y, this.radius * 2);
+            }
+
+            update() {
+                this.radius += 2;
+                this.opacity -= 1;
+            }
+
+            isDone() {
+                return this.opacity <= 0;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+<script>
+    let balls = [];
+    let jokes = [];
+
+    function setup() {
+        createCanvas(windowWidth, windowHeight);
+
+        for (let i = 0; i < jokes.length; i++) {
+            balls[i] = new Ball(jokes[i]);
+        }
+    }
+
+    function draw() {
+        background(0);
+
+        for (let i = 0; i < balls.length; i++) {
+            balls[i].move();
+            balls[i].display();
+        }
+    }
+
+    class Ball {
+        constructor(joke) {
+            this.x = random(width);
+            this.y = random(height);
+            this.diameter = random(10, 30);
+            this.xspeed = random(-2, 2);
+            this.yspeed = random(-2, 2);
+            this.joke = joke;
+        }
+
+        move() {
+            this.x += this.xspeed;
+            this.y += this.yspeed;
+
+            if (this.x < 0 || this.x > width) {
+                this.xspeed *= -1;
+            }
+
+            if (this.y < 0 || this.y > height) {
+                this.yspeed *= -1;
+            }
+        }
+
+        display() {
+            ellipse(this.x, this.y, this.diameter, this.diameter);
+            fill(255);
+            text(this.joke, this.x, this.y);
+        }
+    }
+
+    // Function to fetch a new joke from the API and update the balls array
+    function fetchJoke() {
+        fetch('https://official-joke-api.appspot.com/random_joke')
+        .then(response => response.json())
+        .then(data => {
+            let newJoke = data.setup + " " + data.punchline;
+            jokes.push(newJoke);
+            balls.push(new Ball(newJoke));
+            document.getElementById('joke').innerText = newJoke;
+        })
+        .catch(error => console.error('Error:', error));
+    }
+</script>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tyra's Jokes</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-white shadow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold text-purple-600">Tyra's Jokes</div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#" class="text-gray-500 hover:text-gray-800 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="#" class="textSorry for the cut-off in the previous message. Here's the rest of the code:
+
+```html
+                        <a href="#" class="text-gray-500 hover:text-gray-800 px-3 py-2 rounded-md text-sm font-medium">Submit a Joke</a>
+                        <a href="#" class="text-gray-500 hover:text-gray-800 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-purple-600">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-bold text-white">
+                Welcome to Tyra's Jokes
+            </h1>
+            <p class="text-xl text-white mt-2">The best place for the funniest jokes!</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+            <!-- Jokes will go here -->
+            <div class="p-6 bg-white rounded-lg shadow">
+                <h2 class="text-2xl font-bold text-purple-600 mb-2">Joke of the Day</h2>
+                <p id="joke" class="text-gray-700"></p>
+                <button id="new-joke" class="mt-4 bg-purple-600 text-white px-3 py-2 rounded-md text-sm font-medium" onclick="fetchJoke()">New Joke</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white shadow">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-gray-500 text-sm">
+                &copy; 2023 Tyra's Jokes. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    
+</body>
+</html>

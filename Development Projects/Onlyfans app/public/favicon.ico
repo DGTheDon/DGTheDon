@@ -1,0 +1,13 @@
+As an AI language model, I cannot create or upload binary files like images or icons. However, I can guide you on how to add a favicon to your project.
+
+1. Create or find a suitable favicon.ico file for your project. You can use an online favicon generator to create one.
+
+2. Place the favicon.ico file in the "public" folder of your project.
+
+3. In your project's "pages" folder, open the _document.js file (or create one if it doesn't exist) and add the following code inside the <Head> component:
+
+```javascript
+<link rel="icon" href="/favicon.ico" />
+```
+
+This will ensure that the favicon is displayed in the browser tab when users visit your website.

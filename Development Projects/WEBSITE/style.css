@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}
+.container {
+    max-width: 1200px; /* or whatever maximum width you prefer */
+    margin: 0 auto; /* this will center the container if it's narrower than the screen */
+  }
+  
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(270deg, #ffffff, #9f9f9f, #020031);
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
+}
+
+p:first-child {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+p:last-child {
+    font-style: italic;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: transparent;
+    color: black;
+    padding: 10px;
+    font-family: 'Orbitron', sans-serif;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar a {
+    color: black;
+    text-decoration: none;
+    padding: 5px;
+    transition: background-color 0.3s ease-in;
+}
+
+.navbar a:hover {
+    background-color: #f9f9f9;
+}
+
+.navbar img {
+    height: 100px;
+    width: auto;
+}
+
+div {
+    overflow: auto;
+}
+
+h1, h2, p {
+    font-family: 'Orbitron', sans-serif;
+    background: -webkit-linear-gradient(#7DF9FF, #BC13FE);
+    text-shadow: 2px 2px #ffffff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+h1 {}
+
+h2 {}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #4682B4;
+    text-shadow: 1px 1px #434A42;
+}
+
+.welcome-text {
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with 50% transparency */
+    padding: 150px;
+    border-radius: 300px;
+}
+
+.welcome {
+    display: flex;
+    flex-direction: column;
+    background-image: (5.png);
+    background-attachment: fixed;
+    background: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.25)), url(6.png);
+    background-size: cover;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    width: 100%;
+    margin-top: 50px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+p {
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+h1, p {
+    display: block;
+    font-size: 2.5em;
+    text-shadow: 2px 2px #ffffff;
+}
+
+h2,, p {
+    display: block;
+    font-size: 2em;
+    text-shadow: 2px 2px #434A42;
+}
+.section {
+    display: flex;
+    flex-direction: column;
+    /* ...other styles... */
+}
+
+.section {
+    /* ...styles for all sections... */
+    padding: 20px;
+   
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+.about {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about-text {
+  /* Styles for the about text */
+  width: 50%;
+}
+
+.about-image {
+  /* Styles for the about image */
+  width: 50%;
+}
+
+
+
+#about {
+    background: linear-gradient(90deg, #020031 0%, #6d3353 100%);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#projects {
+    background: linear-gradient(90deg, #6d3353 0%, #ffb86c 100%, 0.5);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#who-we-are {
+    background: linear-gradient(90deg, #ffb86c 0%, #ff7c7c 100%);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#email-list {
+    background: linear-gradient(90deg, #ff7c7c 0%, #7c4dff 100%);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#contact {
+    background: linear-gradient(90deg, #7c4dff 0%, #0acffe 100%);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.email-list {
+    display: block;
+    transition: all 0.3s ease-in-out;
+}
+
+.email-list:hover {
+    transform: scale(1.05);
+}
+css
+.section-content {
+    max-width: 200px; /* Adjust this value to your preference */
+    text-align: justify;
+}
+
+/* Add a class for the text within each section */
+.section-text {
+    font-family: "Arial", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+#about {
+    /* ... */
+}
+
+#about .section-text {
+    color: #f0ecdb; /* Adjust the text color for the about section here */
+}
+
+#projects {
+    /* ... */
+}
+
+#projects .section-text {
+    color: #fef4f1; /* Adjust the text color for the projects section here */
+}
+
+#who-we-are {
+    /* ... */
+}
+
+
+#who-we-are {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+#who-we-are h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000;
+}
+
+#who-we-are p {
+    font-weight: 400;
+    text-align: justify;
+}
+#email-list {
+    /* ... */
+}
+
+#email-list .section-text {
+    color: #e0dafb; /* Adjust the text color for the email-list section here */
+}
+
+#contact {
+    /* ... */
+}
+
+#contact .section-text {
+    color: #daf2ff; /* Adjust the text color for the contact section here */
+}
+```
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+p {
+    line-height: 1.6;
+    color: #ddd;
+}
+
+a {
+    color: #0acffe;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #7c4dff;
+}
+footer {
+  background-color: #020031;
+  color: #fff;
+  padding: 20px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-content p {
+  margin: 0;
+}
+
+.social-icons {
+  display: flex;
+}
+
+.social-icons a {
+  color: #fff;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .social-icons {
+    margin-top: 10px;
+  }
+}
+
+
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Income Generator</title>
+    <link rel="stylesheet" href="css/tailwind.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="bg-gradient-to-r from-green-400 to-blue-500">
+        <nav class="container mx-auto flex justify-between items-center p-6">
+            <div class="text-white font-bold text-xl">
+                AI Income Generator
+            </div>
+            <ul class="flex space-x-4">
+                <li><a href="index.html" class="text-white">Home</a></li>
+                <li><a href="about.html" class="text-white">About</a></li>
+                <li><a href="services.html" class="text-white">Services</a></li>
+                <li><a href="blog.html" class="text-white">Blog</a></li>
+                <li><a href="contact.html" class="text-white">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home-section" class="container mx-auto p-6">
+            <div class="placeholder-div w-64 h-64 bg-gray-300"></div>
+            <h1 class="text-4xl font-bold">Welcome to AI Income Generator</h1>
+            <p class="text-lg">Discover the power of AI to generate income for your business.</p>
+        </section>
+
+        <section id="about-section" class="container mx-auto p-6">
+            <h2 class="text-3xl font-bold">About Us</h2>
+            <div class="placeholder-div w-64 h-64 bg-gray-300"></div>
+            <p class="text-lg">Learn more about our team and our mission to revolutionize income generation with AI.</p>
+        </section>
+
+        <section id="services-section" class="container mx-auto p-6">
+            <h2 class="text-3xl font-bold">Our Services</h2>
+            <div class="grid grid-cols-3 gap-4">
+                <div class="placeholder-div w-64 h-64 bg-gray-300"></div>
+                <div class="placeholder-div w-64 h-64 bg-gray-300"></div>
+                <div class="placeholder-div w-64 h-64 bg-gray-300"></div>
+            </div>
+        </section>
+
+        <section id="blog-section" class="container mx-auto p-6">
+            <h2 class="text-3xl font-bold">Latest Blog Posts</h2>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="placeholder-div w-64 h-64 bg-gray-300"></div>
+                <div class="placeholder-div w-64 h-64 bg-gray-300"></div>
+            </div>
+        </section>
+
+        <section id="contact-section" class="container mx-auto p-6">
+            <h2 class="text-3xl font-bold">Get in Touch</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="bg-gradient-to-r from-green-400 to-blue-500 p-6">
+        <div class="container mx-auto text-center text-white">
+            <p>&copy; 2022 AI Income Generator. All rights reserved.</p>
+            <button id="dark-mode-toggle" class="text-white">Toggle Dark Mode</button>
+        </div>
+    </footer>
+
+    <script src="js/p5.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/interactions.js"></script>
+    <script src="js/darkmode.js"></script>
+    <script src="js/responsive.js"></script>
+    <script src="js/parallax.js"></script>
+</body>
+</html>
